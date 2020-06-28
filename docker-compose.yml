@@ -1,0 +1,21 @@
+version: "3.2"
+services:
+  app:
+    build: .
+    container_name: zerodha-app
+    restart: unless-stopped
+    hostname: zerodha-app
+    depends_on:
+      - redis
+    ports: 
+      - "8000:8080"
+    environment:
+      DEMO_REDIS_ADDR: "zerodha-redis:6379"
+
+  redis:
+    image: "redis:alpine"
+    container_name: zerodha-redis
+    restart: unless-stopped
+    hostname: zerodha-redis
+    volumes:
+     - /data:/data

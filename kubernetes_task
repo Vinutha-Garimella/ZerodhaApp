@@ -1,0 +1,2 @@
+#Create a namespace demo-ops
+kubectl create namespace demo-ops

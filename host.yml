@@ -1,0 +1,2 @@
+[default]
+152.67.166.148 ansible_user=ubuntu ansible_port=22
